@@ -1,0 +1,164 @@
+<html><head></head> 
+ <body>
+   
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Çağlar Kurumu</title> 
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        nav {
+            background-color: #2a9d8f;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            background: #264653;
+            color: white;
+            padding: 2rem;
+        }
+        footer {
+            background-color: #2a9d8f;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            margin-top: 2rem;
+        }
+        .hidden {
+            display: none;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #21867a;
+        }
+    </style> 
+  <script>
+        function showSection(sectionId) {
+            // Tüm bölümleri gizle
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => section.classList.add("hidden"));
+
+            // İlgili bölümü göster
+            document.getElementById(sectionId).classList.remove("hidden");
+        }
+    </script> 
+  <nav>
+    <a href="javascript:void(0)" onclick="showSection('home')">Ana Sayfa</a>
+    <a href="javascript:void(0)" onclick="showSection('about')">Hakkımızda</a>
+    <a href="javascript:void(0)" onclick="showSection('services')">Hizmetler</a>
+    <a href="javascript:void(0)" onclick="showSection('contact')">İletişim</a>
+    <a href="javascript:void(0)" onclick="showSection('classes')">Sınıflar</a>
+    <a href="javascript:void(0)" onclick="showSection('login')">Giriş Yap</a>
+    <a href="javascript:void(0)" onclick="showSection('signup')">Kayıt Ol</a>
+  </nav> 
+  <header> 
+   <h1>Çağlar Eğitim Kurumu</h1> 
+   <p>Kurumumuz tarafından özenle hazırlanmış ders programları</p> 
+  </header> <!-- Ana Sayfa --> 
+  <section id="home"> 
+   <h2>Hoş Geldiniz</h2> 
+   <p>Çağlar Kurumu'na hoş geldiniz! İletişim numaralarımız aşağıdadır:</p> 
+   <p><strong>Telefon:</strong> +90 555 555 5555</p> 
+   <p><strong>Email:</strong> info@caglar.com</p> 
+   <p><strong>Merkez:</strong> Mersin/Yenişehir</p> 
+   <h3>2. Sınıftan 8. Sınıfa Kadar</h3> 
+   <p>Kurumsal eğitim programlarımız, 2. sınıftan 8. sınıfa kadar öğrencilere özeldir.</p> 
+  </section> <!-- Hakkımızda --> 
+  <section id="about" class="hidden"> 
+   <h2>Biz Kimiz?</h2> 
+   <p>Çağlar Kurumu, uzmanlık alanında lider bir kurumdur. Amacımız, müşterilerimize en iyi hizmeti sunmaktır.</p> 
+  </section> <!-- Hizmetler --> 
+  <section id="services" class="hidden"> 
+   <h2>Hizmetlerimiz</h2> 
+   <ul> 
+    <li>Danışmanlık</li> 
+    <li>Eğitim</li> 
+    <li>Teknoloji Çözümleri</li> 
+   </ul> 
+  </section> <!-- Sınıflar --> 
+  <section id="classes" class="hidden"> 
+   <h2>2. Sınıftan 8. Sınıfa Kadar</h2> 
+   <p>Çağlar Kurumu olarak, 2. sınıftan 8. sınıfa kadar olan öğrenciler için çeşitli eğitim programları sunuyoruz. Bu programlar, onların gelişimini desteklemek için özenle hazırlanmıştır.</p> 
+  </section> <!-- İletişim --> 
+  <section id="contact" class="hidden"> 
+   <h2>Bize Ulaşın</h2> 
+   <form> <label for="name">Adınız:</label> 
+    <input type="text" id="name" name="name" required> 
+    <br> 
+    <br> <label for="email">E-posta:</label> 
+    <input type="email" id="email" name="email" required> 
+    <br> 
+    <br> <label for="message">Mesajınız:</label> 
+    <br> <textarea id="message" name="message" rows="4" required></textarea> 
+    <br> 
+    <br> <button type="submit">Gönder</button> 
+   </form> 
+  </section> 
+  <!-- Giriş Yap -->
+  <section id="login" class="hidden">
+    <h2>Giriş Yap</h2>
+    <form>
+      <label for="username">Kullanıcı Adı:</label>
+      <input type="text" id="username" name="username" required>
+      <br><br>
+      <label for="password">Şifre:</label>
+      <input type="password" id="password" name="password" required>
+      <br><br>
+      <button type="submit">Giriş Yap</button>
+    </form>
+  </section>
+  <!-- Kayıt Ol -->
+  <section id="signup" class="hidden">
+    <h2>Kayıt Ol</h2>
+    <form>
+      <label for="fullname">Ad Soyad:</label>
+      <input type="text" id="fullname" name="fullname" required>
+      <br><br>
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" name="email" required>
+      <br><br>
+      <label for="password">Şifre:</label>
+      <input type="password" id="password" name="password" required>
+      <br><br>
+      <button type="submit">Kayıt Ol</button>
+    </form>
+  </section>
+  <footer>
+    © 2024-2025 Çağlar Eğitim Kurumu. Tüm hakları saklıdır. 
+  </footer> 
+ 
+</body></html>
